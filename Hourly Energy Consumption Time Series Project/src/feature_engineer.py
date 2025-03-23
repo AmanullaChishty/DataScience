@@ -48,7 +48,7 @@ class TimeSeriesFeatureEngineer:
 
 
     @log_execution
-    def create_log_features(self,column,lags):
+    def create_lag_features(self,column,lags):
         """Creates ag features for the specified column."""
         if self.df is not None and column in self.df.columns:
             for lag in lags:
@@ -58,7 +58,7 @@ class TimeSeriesFeatureEngineer:
         return self.df
 
     @log_execution
-    def create_lag_features(self,column,leads):
+    def create_lead_features(self,column,leads):
         """Creates lead features for the specified column."""
         if self.df is not None and column in self.df.columns:
             for lead in leads:
