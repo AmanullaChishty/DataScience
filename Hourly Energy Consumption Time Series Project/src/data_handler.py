@@ -27,10 +27,12 @@ class TimeSeriesDataHandler:
     def handle_missing_values(self,method="ffill"):
         """Fill missing values using specified method."""
         if self.df is not None:
-            self.df.fillna(method=method, inplace=True)
-
             if method == "interpolate":
                 self.df.interpolate(inplace=True)
+            elif method == "ffill":
+                self.df.ffill(inplace=True)
+            elif method == "bfill":
+                self.df.bfill(inplace=True)
             else:
                 raise ValueError("Invalid method for handling missing values.")
         return self.df

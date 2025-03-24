@@ -16,7 +16,7 @@ class TimeSeriesFeatureEngineer:
         """Extracts various datetime features from the DataFrame index."""
         if self.df is not None and isinstance(self.df.index,pd.DatetimeIndex):
             self.df['year'] = self.df.index.year
-            self.df['month'] = self.sf.index.month
+            self.df['month'] = self.df.index.month
             self.df['day'] = self.df.index.day
             self.df['hour'] = self.df.index.hour
             self.df['dayofweek'] = self.df.index.dayofweek
