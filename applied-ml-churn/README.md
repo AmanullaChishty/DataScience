@@ -68,3 +68,10 @@ So beyond AUC:
 Evaluate Precision@K (e.g., Precision among top 5% risk)
 Evaluate Recall@K (how many churners are captured in that top list)
 This turns model performance into something actionable.
+
+
+Operational thresholding
+
+Model probabilities must be converted into an “action/no-action” decision for retention outreach. We choose an operational threshold based on business constraints:
+Capacity-based (top_pct): If we can contact only a fixed fraction of customers (e.g., 15%), we choose a threshold that flags approximately that fraction as “high risk.”
+Recall-based (min_recall): If we require catching a minimum fraction of churners (e.g., recall ≥ 0.70), we choose a threshold that meets the recall constraint and maximizes precision among feasible thresholds.
