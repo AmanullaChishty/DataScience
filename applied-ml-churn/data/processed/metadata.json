@@ -1,0 +1,39 @@
+{
+  "input_csv": "data/raw/telco_churn.csv",
+  "target_col": "churn",
+  "numeric_cols": [
+    "seniorcitizen",
+    "tenure",
+    "monthlycharges",
+    "totalcharges"
+  ],
+  "categorical_cols": [
+    "customerid",
+    "gender",
+    "partner",
+    "dependents",
+    "phoneservice",
+    "multiplelines",
+    "internetservice",
+    "onlinesecurity",
+    "onlinebackup",
+    "deviceprotection",
+    "techsupport",
+    "streamingtv",
+    "streamingmovies",
+    "contract",
+    "paperlessbilling",
+    "paymentmethod"
+  ],
+  "split": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "random_state": 42,
+  "saved_files": {
+    "train": "data/processed/train.csv",
+    "val": "data/processed/val.csv",
+    "test": "data/processed/test.csv"
+  }
+}
